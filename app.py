@@ -23,8 +23,8 @@ def slack_events():
 
     event = data.get('event', {})
     
-    # ✅ Process only user messages (filter out bot messages and joins)
-    if event.get('type') == 'message' and not event.get('subtype'):
+    # ✅ Prevent bot loops by ignoring any event that has 'bot_id'
+    if event.get('type') == 'message' and not event.get('subtype') and 'bot_id' not in event:
         user = event.get('user')
         channel = event.get('channel')
         text = event.get('text')
