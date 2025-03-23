@@ -1,2 +1,5 @@
 service_account.json
 .env
+bfg-1.15.0.jar
+bfg_replace.txt
+..bfg-report/
