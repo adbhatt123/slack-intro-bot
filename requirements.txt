@@ -1,3 +1,5 @@
 Flask
 slack_sdk
+gspread
+google-auth
 gunicorn
